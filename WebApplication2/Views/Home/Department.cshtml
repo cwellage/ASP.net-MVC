@@ -1,0 +1,16 @@
+﻿
+@model IEnumerable<MyDataModel.Department>
+
+@{
+    ViewBag.Title = "Department";
+}
+
+<h2>Department</h2>
+
+<ul>
+    @foreach (var dep in Model)
+    {
+        <li>@dep.DepartmentName</li>
+    }
+</ul>
+
