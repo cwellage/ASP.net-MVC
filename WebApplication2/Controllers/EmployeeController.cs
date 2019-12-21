@@ -18,6 +18,13 @@ namespace WebApplication2.Controllers
         }
 
         [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var emp = db.Employees.Include("Department").Where(a => a.Id == id).FirstOrDefault();
+            return View(emp);
+        }
+
+        [HttpGet]
         public ActionResult Create()
         {
             ViewData ["Departments"] = db.GetAllDepartments();
@@ -28,13 +35,11 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public ActionResult Create(Employee emp)
         {
-            ViewData["Departments"] = db.GetAllDepartments();
-
             if (ModelState.IsValid)
             {
                 db.Employees.Add(emp);
                 db.SaveChanges();
-                return View("index", db.Employees.ToList());
+                return View("index", db.Employees.Include("Department").ToList());
             }
 
             return View(emp);
@@ -69,7 +74,7 @@ namespace WebApplication2.Controllers
                 emp.DepartmentId = model.DepartmentId;
                 emp.EmployeeName = model.EmployeeName;
                 db.SaveChanges();
-                return View("index", db.Employees.ToList());
+                return View("index", db.Employees.Include("Department").ToList());
             }
             
             return View(model);

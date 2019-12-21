@@ -5,25 +5,33 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication2.Infastructure;
 using MyDataModel;
+using System.Web.Routing;
 
 namespace WebApplication2.Controllers
 {
     public class HomeController : Controller
     {
+       
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Department()
+        [Route("CustomAction"),Route("default")]
+        public ActionResult Default()
         {
-            List<Department> dep = new MyDB().GetAllDepartments();
-            return View(dep);
+            return Content("Default content");
         }
+
+        //public ActionResult Department()
+        //{
+        //    List<Department> dep = new MyDB().GetAllDepartments();
+        //    return View(dep);
+        //}
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Employee details";
 
             return View();
         }

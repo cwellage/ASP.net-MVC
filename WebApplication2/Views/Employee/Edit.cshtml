@@ -23,7 +23,7 @@
             @Html.HiddenFor(model => model.Id)
     
             <div class="form-group">
-                @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Department.DepartmentName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.DropDownListFor(model => model.DepartmentId, new SelectList(Model.Departments,"id","DepartmentName"));
                     @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
