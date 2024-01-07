@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28922.388
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{5FB0E206-51C8-4469-8CFB-93C24F8BD7BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDataModel", "MyDataModel\MyDataModel.csproj", "{8DF73F73-44AA-4796-BFFE-78414EAA7860}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDataModel", "MyDataModel\MyDataModel.csproj", "{8DF73F73-44AA-4796-BFFE-78414EAA7860}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
